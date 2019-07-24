@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
+// import RandomNumbers from './components/RandomNumbers';
+// import MultiplesRandomNumbers from './components/MultiplesRandomNumbers';
+
+const MultiplesRandomNumbers = lazy(() => import('./components/MultiplesRandomNumbers'));
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ErrorBoundary>
+        <Suspense fallback={<div>Loading...</div>}>
+          <MultiplesRandomNumbers />
+        </Suspense>
+      </ErrorBoundary>
     </div>
   );
 }
