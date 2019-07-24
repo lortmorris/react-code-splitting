@@ -1,11 +1,10 @@
 #React.lazy and React.Suspense Example
 ## Author
 [![Cesar Casas](https://media.licdn.com/dms/image/C5603AQHhlgOKjoI5Cg/profile-displayphoto-shrink_200_200/0?e=1569456000&v=beta&t=hvcTag5oQ5Pq4p7Tb7yV3SCg4FFRq3VPh5gKtiUVQP8)](https://www.linkedin.com/in/cesarcasas/)
+
 [César Casas](https://www.linkedin.com/in/cesarcasas/)
 
 ## Description
-
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 This is a example for understand how works React.lazy and React.Suspense
 
