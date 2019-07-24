@@ -1,22 +1,24 @@
 import React, { Suspense, lazy } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import ErrorBoundary from './components/ErrorBoundary';
-// import RandomNumbers from './components/RandomNumbers';
-// import MultiplesRandomNumbers from './components/MultiplesRandomNumbers';
+import Home from './components/Home';
 
 const MultiplesRandomNumbers = lazy(() => import('./components/MultiplesRandomNumbers'));
 
 
+const App = () => (
+  <Router>
+    <ErrorBoundary>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/example" component={MultiplesRandomNumbers}/>
+        </Switch>
+      </Suspense>
+    </ErrorBoundary>
+  </Router>
+);
 
-function App() {
-  return (
-    <div className="App">
-      <ErrorBoundary>
-        <Suspense fallback={<div>Loading...</div>}>
-          <MultiplesRandomNumbers />
-        </Suspense>
-      </ErrorBoundary>
-    </div>
-  );
-}
 
 export default App;
